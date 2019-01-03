@@ -30,6 +30,14 @@ h1 {
   color: white;
 }
 
+select, option {
+  font-size: 2rem;
+}
+
+form {
+  margin-bottom: 1rem;
+}
+
 .swatch-card {
   display: flex;
   flex-direction: column;

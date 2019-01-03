@@ -2,13 +2,23 @@ const PubSub = require('../helpers/pub_sub.js');
 
 const SortView = function(attachment) {
   this.element = document.querySelector(attachment);
-  debugger;
 }
 
 SortView.prototype.render = function () {
   this.element.innerHTML = "";
   const div = document.createElement("div");
-  div.innerHTML = "form goes here ta";
+  const formDiv = document.createElement("form");
+  const select = document.createElement("select");
+  const options = ["name","red","green","blue","cyan","yellow","magenta","key","hue","luminosity","value","luma","neutrality"];
+  options.forEach((optionName) => {
+    const option = document.createElement("option");
+    option.name = optionName;
+    option.value = optionName;
+    option.innerHTML = optionName;
+    select.appendChild(option);
+  })
+  formDiv.appendChild(select);
+  div.appendChild(formDiv);
   this.element.appendChild(div);
 };
 
