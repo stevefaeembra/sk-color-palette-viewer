@@ -14,7 +14,10 @@ const PaletteModel = function () {
       blue: colorEntry.blue(),
       cyan: colorEntry.cyan(),
       magenta: colorEntry.magenta(),
-      key: colorEntry.key()
+      key: colorEntry.key(),
+      hue: colorEntry.hue(),
+      saturation: colorEntry.saturation(),
+      lightness: colorEntry.lightness()
     });
     console.log(entry);
     this.data.push(entry);
