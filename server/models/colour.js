@@ -12,6 +12,7 @@ class Colour {
     this.hex = hexcode;
     this.color = color(hexcode);
     this.rgb = this.color.rgb();
+    this.cmyk = this.color.cmyk();
   }
 
   hexRgb() {
@@ -30,6 +31,21 @@ class Colour {
     return this.rgb.color[2];
   }
 
+  cyan() {
+    return this.cmyk.color[0];
+  };
+
+  magenta() {
+    return this.cmyk.color[1];
+  }
+
+  yellow() {
+    return this.cmyk.color[2];
+  }
+
+  key() { // black in CMYK (actually called 'Key', not Black. Hence K.)
+    return this.cmyk.color[3];
+  }
 
 };
 
