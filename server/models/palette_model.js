@@ -17,9 +17,10 @@ const PaletteModel = function () {
       key: colorEntry.key(),
       hue: colorEntry.hue(),
       saturation: colorEntry.saturation(),
-      lightness: colorEntry.lightness()
+      lightness: colorEntry.lightness(),
+      luma: colorEntry.luma()
     });
-    console.log(entry);
+    //console.log(entry);
     this.data.push(entry);
   })
 }

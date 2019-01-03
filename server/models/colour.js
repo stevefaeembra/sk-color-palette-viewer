@@ -60,6 +60,18 @@ class Colour {
     return this.hsl.color[2];
   }
 
+  luma(color) {
+    // perceptual luminosity
+    // (most accurate conversion to greyscale, takes into account that
+    // greens are lighter than reds and blues)
+    var r = this.rgb.color[0];
+    var g = this.rgb.color[1];
+    var b = this.rgb.color[2];
+    var lum = ((0.2126*r)+(0.7152*g)+(0.0722*b));
+    return lum;
+  }
+
+
 };
 
 module.exports = Colour;
