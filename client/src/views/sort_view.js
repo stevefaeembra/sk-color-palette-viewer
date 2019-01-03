@@ -9,6 +9,7 @@ SortView.prototype.render = function () {
   const div = document.createElement("div");
   const formDiv = document.createElement("form");
   const select = document.createElement("select");
+  select.id = "sortBy";
   const options = ["name","red","green","blue","cyan","yellow","magenta","key","hue","luminosity","value","luma","neutrality"];
   options.forEach((optionName) => {
     const option = document.createElement("option");
