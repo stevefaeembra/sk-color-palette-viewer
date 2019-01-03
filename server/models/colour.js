@@ -33,7 +33,7 @@ class Colour {
   }
 
   cyan() {
-    return this.cmyk.color[0]; 
+    return this.cmyk.color[0];
   };
 
   magenta() {
@@ -79,7 +79,11 @@ class Colour {
     var g = this.rgb.color[1];
     var b = this.rgb.color[2];
     var lum = (r+g+b)/3.0; // non-perceptual
-    return ((r-lum)*(r-lum)) + ((g-lum)*(g-lum)) + ((b-lum)*(b-lum));
+    return (
+      (.2126*(r-lum)*(r-lum)) +
+      (.7152*((g-lum)*(g-lum))) +
+      (.0722*(b-lum)*(b-lum))
+    );
   }
 
 };
