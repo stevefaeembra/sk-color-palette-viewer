@@ -7,8 +7,13 @@ const PaletteModel = require('./models/palette_model');
 
 const publicPath = path.join(__dirname, '../client/public');
 
-// app.use('/', express.static(publicPath));
+app.use('/', express.static(publicPath));
 const port = process.env.PORT || 3000
+
+app.get('/', (req,res) => {
+  // return front-end client
+  res.sendFile(path.join(publicPath,'index.html'));
+});
 
 app.get('/colors', (req,res) => {
   const paletteModel = new PaletteModel();
