@@ -19,6 +19,15 @@ SortView.prototype.render = function () {
     select.appendChild(option);
   })
   formDiv.appendChild(select);
+  // if we change the selection, trigger an event
+  select.addEventListener("change", (event) => {
+    const selectedOption = "";
+    debugger;
+    console.log(event.target);
+    const indexOfSortField = event.target.selectedIndex;
+    const selectedSortOption = event.target[indexOfSortField];
+    PubSub.publish("sortView:changeSortBy", {sortBy: selectedSortOption["name"]});
+  })
   div.appendChild(formDiv);
   this.element.appendChild(div);
 };
@@ -27,7 +36,7 @@ SortView.prototype.bindEvents = function () {
   PubSub.subscribe("palettemodel:gotpalette", (event) => {
     PubSub.signForDelivery(this,event);
     this.render();
-  })
+  });
 };
 
 module.exports = SortView;
