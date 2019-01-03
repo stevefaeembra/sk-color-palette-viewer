@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000
 
 app.get('/colors', (req,res) => {
   const paletteModel = new PaletteModel();
-  res.json(paletteModel.getUnsorted());
+  res.json(paletteModel.getAll());
 })
 
 app.listen(port, function () {
