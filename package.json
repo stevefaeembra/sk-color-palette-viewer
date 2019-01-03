@@ -6,6 +6,7 @@
   "dependencies": {
     "color": "^3.1.0",
     "express": "^4.16.4",
+    "nodemon": "^1.18.9",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.2.0"
   },
