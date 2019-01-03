@@ -13,6 +13,7 @@ const PaletteModel = function () {
       green: colorEntry.green(),
       blue: colorEntry.blue(),
       cyan: colorEntry.cyan(),
+      yellow: colorEntry.yellow(),
       magenta: colorEntry.magenta(),
       key: colorEntry.key(),
       hue: colorEntry.hue(),
