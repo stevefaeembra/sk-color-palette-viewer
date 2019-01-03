@@ -33,7 +33,7 @@ class Colour {
   }
 
   cyan() {
-    return this.cmyk.color[0];
+    return this.cmyk.color[0]; 
   };
 
   magenta() {

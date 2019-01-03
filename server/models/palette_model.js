@@ -41,8 +41,8 @@ PaletteModel.prototype.sortedBy = function (fieldName) {
   return clone;
 };
 
-PaletteModel.prototype.getAll = function () {
-  return this.sortedBy("luma");
+PaletteModel.prototype.getAll = function (sortedBy = "name") {
+  return this.sortedBy(sortedBy);
 };
 
 module.exports = PaletteModel;

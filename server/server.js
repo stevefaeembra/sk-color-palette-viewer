@@ -12,7 +12,8 @@ const port = process.env.PORT || 3000
 
 app.get('/colors', (req,res) => {
   const paletteModel = new PaletteModel();
-  res.json(paletteModel.getAll());
+  const sortBy = req.query.sortedBy;
+  res.json(paletteModel.getAll(sortBy));
 })
 
 app.listen(port, function () {
