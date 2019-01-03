@@ -22,7 +22,7 @@ SortView.prototype.render = function () {
   // if we change the selection, trigger an event
   select.addEventListener("change", (event) => {
     const selectedOption = "";
-    debugger;
+    //debugger;
     console.log(event.target);
     const indexOfSortField = event.target.selectedIndex;
     const selectedSortOption = event.target[indexOfSortField];

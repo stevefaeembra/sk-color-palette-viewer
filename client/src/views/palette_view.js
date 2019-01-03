@@ -18,7 +18,8 @@ PaletteView.prototype.bindEvents = function () {
     PubSub.signForDelivery(this,event);
     const data = event.detail.palette;
     this.render(data);
-  })
+  });
+  
 };
 
 module.exports = PaletteView;

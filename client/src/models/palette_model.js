@@ -7,6 +7,10 @@ const PaletteModel = function() {
 }
 
 PaletteModel.prototype.bindEvents = function () {
+  PubSub.subscribe("sortView:changeSortBy", (event) => {
+    PubSub.signForDelivery(this,event);
+    console.log(`Now going to sort by ${event.detail.sortBy}`);
+  })
 };
 
 PaletteModel.prototype.fetchPalette = function () {
