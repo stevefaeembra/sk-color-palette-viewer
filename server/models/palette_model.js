@@ -25,8 +25,23 @@ const PaletteModel = function () {
   })
 }
 
+PaletteModel.prototype.sortedBy = function (fieldName) {
+  // clone array and sort it by one of the fields.
+  var clone = this.data.slice(0);
+  clone.sort((color1,color2) => {
+    if (color1[fieldName] > color2[fieldName]) {
+      return 1;
+    } else if (color1[fieldName] < color2[fieldName]) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  return clone;
+};
+
 PaletteModel.prototype.getAll = function () {
-  return this.data;
+  return this.sortedBy("luma");
 };
 
 module.exports = PaletteModel;
