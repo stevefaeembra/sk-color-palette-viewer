@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log("DOM has loaded");
   const items = [
     new PaletteModel(),
-    new PaletteView()
+    new PaletteView("#paletteView")
   ]
   items.forEach((item) => {
     item.bindEvents();
