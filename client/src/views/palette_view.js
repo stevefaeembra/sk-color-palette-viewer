@@ -1,4 +1,5 @@
 const PubSub = require('../helpers/pub_sub.js');
+const SwatchView = require("./swatch_view.js");
 
 const PaletteView = function(attachment) {
   this.element = document.querySelector(attachment);
@@ -7,9 +8,8 @@ const PaletteView = function(attachment) {
 PaletteView.prototype.render = function (data) {
   this.element.innerHTML = '';
   data.forEach((colorEntry) => {
-    const divSwatch = document.createElement("div");
-    divSwatch.innerHTML = colorEntry.name;
-    this.element.appendChild(divSwatch);
+    const divSwatch = new SwatchView(colorEntry);
+    this.element.appendChild(divSwatch.render());
   })
 };
 
