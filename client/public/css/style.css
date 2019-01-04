@@ -115,7 +115,17 @@ nav {
   color:white;
 }
 
+.selectedInfo--close {
+  border: 4px solid black;
+  border-radius: 1rem;
+  background-color: lightGray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .selectedInfo--field--value {
+  background-color: white;
   padding: .2rem;
   overflow-x: hidden;
 }

@@ -49,7 +49,7 @@ SelectedColourView.prototype.render = function (colorEntry) {
   // add a close button at the end of the grid
 
   const closeButton = document.createElement("div");
-  closeButton.className = "selectedInfo--field";
+  closeButton.className = "selectedInfo--field selectedInfo--close";
   closeButton.innerHTML = "Close";
 
   // add event listener to close button
