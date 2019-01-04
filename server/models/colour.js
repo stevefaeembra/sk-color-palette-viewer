@@ -4,7 +4,7 @@
 // e.g. r, g. b, c, y, m , k...
 
 var color = require("color");
-
+var rgb2lab = require("./rgb2lab");
 
 class Colour {
 
@@ -14,11 +14,28 @@ class Colour {
     this.rgb = this.color.rgb();
     this.hsl = this.color.hsl();
     this.cmyk = this.color.cmyk();
+    this.lab = rgb2lab.rgb2lab([
+      this.rgb.color[0],
+      this.rgb.color[1],
+      this.rgb.color[2]
+    ]); // this is a simple [L,a,b] array
   }
 
   hexRgb() {
     return this.hex;
   };
+
+  Lab_L() {
+    return this.lab[0];
+  }
+
+  Lab_a() {
+    return this.lab[1];
+  }
+
+  Lab_b() {
+    return this.lab[2];
+  }
 
   red() {
     return this.rgb.color[0];

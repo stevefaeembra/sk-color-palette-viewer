@@ -27,7 +27,10 @@ PaletteModel.prototype.loadPalette = function (paletteName) {
       saturation: colorEntry.saturation(),
       lightness: colorEntry.lightness(),
       luma: colorEntry.luma(),
-      neutrality: colorEntry.neutrality()
+      neutrality: colorEntry.neutrality(),
+      lab_l: colorEntry.Lab_L(),
+      lab_a: colorEntry.Lab_a(),
+      lab_b: colorEntry.Lab_b(),
     });
     this.data.push(entry);
   })
