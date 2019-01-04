@@ -11,6 +11,7 @@ SortView.prototype.render = function () {
   const select = document.createElement("select");
   select.id = "sortBy";
   const options = ["Sort by:","name","red","green","blue","cyan","yellow","magenta","key","hue","saturation", "value","luma","neutrality","lab_l","lab_a","lab_b"];
+
   options.forEach((optionName) => {
     const option = document.createElement("option");
     option.name = optionName;

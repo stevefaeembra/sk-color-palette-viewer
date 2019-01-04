@@ -96,8 +96,32 @@ nav {
   overflow:hidden;
 }
 
+.selectedInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+}
+
+.selectedInfo--field {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.selectedInfo--field--title {
+  padding: .2rem;
+  background-color: black;
+  color:white;
+}
+
+.selectedInfo--field--value {
+  padding: .2rem;
+  overflow-x: hidden;
+}
+
 .selectedInfo--swatch {
-  width: 64px;
-  height: 64px;
+  display: inline-block;
+  border: 1px solid black;
   box-shadow: 0px 0px 4px rgba(0,0,0,.6);
 }
