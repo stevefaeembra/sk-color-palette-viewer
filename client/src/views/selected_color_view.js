@@ -28,7 +28,13 @@ SelectedColourView.prototype.render = function (colorEntry) {
       const divFieldValue = document.createElement("div");
       divFieldValue.className = "selectedInfo--field--value";
 
-      divFieldValue.innerHTML = `${colorEntry[fieldName]}`;
+      // if a number, round to 2 dps
+      const fieldValue = colorEntry[fieldName];
+      if (parseFloat(fieldValue)) {
+        divFieldValue.innerHTML = `${colorEntry[fieldName].toFixed(2)}`;
+      } else {
+        divFieldValue.innerHTML = `${colorEntry[fieldName]}`;
+      };
       divField.appendChild(divFieldName);
       divField.appendChild(divFieldValue);
 
