@@ -1,8 +1,15 @@
-const paletteJson = require("../db/palette_websafe.js")
+const Palettes = require("../db/palettes.js")
 const Colour = require("./colour.js")
 
 const PaletteModel = function () {
-  this.palette = paletteJson;
+  this.palettes = new Palettes();
+  this.palette = {};
+  this.data = [];
+  this.loadPalette("websafe");
+}
+
+PaletteModel.prototype.loadPalette = function (paletteName) {
+  this.palette = this.palettes.fetchPalette(paletteName);
   this.data = [];
   Object.keys(this.palette).forEach((colourName) => {
     const colorEntry = new Colour(this.palette[colourName]);
@@ -25,7 +32,7 @@ const PaletteModel = function () {
     //console.log(entry);
     this.data.push(entry);
   })
-}
+};
 
 PaletteModel.prototype.sortedBy = function (fieldName) {
   // clone array and sort it by one of the fields.

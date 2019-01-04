@@ -1,4 +1,4 @@
-// standard web colours in #rrggbb hex format
+// standard CSS colours in #rrggbb hex format
 
 var palette = {
   "midnight blue": "#191970",
