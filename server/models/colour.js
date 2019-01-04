@@ -21,6 +21,10 @@ class Colour {
     ]); // this is a simple [L,a,b] array
   }
 
+  cssRgb() {
+    return `rgb(${this.red()}, ${this.green()}, ${this.blue()})`;
+  };
+
   hexRgb() {
     return this.hex;
   };

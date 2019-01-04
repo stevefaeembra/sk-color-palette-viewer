@@ -16,6 +16,7 @@ PaletteModel.prototype.loadPalette = function (paletteName) {
     const entry = ({
       name: colourName,
       hexcode: colorEntry.hexRgb(),
+      "css rgb": colorEntry.cssRgb(),
       red: colorEntry.red(),
       green: colorEntry.green(),
       blue: colorEntry.blue(),
