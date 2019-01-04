@@ -49,7 +49,7 @@ form {
 
 .swatch-card--swatch {
   height: 60px;
-  border-radius: 10px;
+  border-radius: 50%;
 }
 
 .swatch-card--name {
