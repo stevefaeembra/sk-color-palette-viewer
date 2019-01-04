@@ -99,4 +99,5 @@ nav {
 .selectedInfo--swatch {
   width: 64px;
   height: 64px;
+  box-shadow: 0px 0px 4px rgba(0,0,0,.6);
 }

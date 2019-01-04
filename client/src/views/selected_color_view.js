@@ -12,7 +12,13 @@ SelectedColourView.prototype.render = function (colorEntry) {
   const divSwatch = document.createElement("div");
   divSwatch.className = "selectedInfo--swatch";
   divSwatch.style.backgroundColor = colorEntry.hexcode;
-  divSelectedInfo.innerHTML=`<h1>${colorEntry.name}</h1>`;
+  // create an info element for each field in the colorEntry
+  Object.keys(colorEntry).forEach((fieldName) => {
+    const divField = document.createElement("div");
+    divField.className = "selectedInfo--field";
+    divField.innerHTML = `${fieldName} = ${colorEntry[fieldName]}`;
+    divSelectedInfo.appendChild(divField);
+  })
   divSelectedInfo.appendChild(divSwatch);
   this.element.appendChild(divSelectedInfo);
 };
