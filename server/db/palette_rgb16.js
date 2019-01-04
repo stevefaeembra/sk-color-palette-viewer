@@ -1,6 +1,4 @@
-// websafe palette
-// these are the colours which can be represented in 3 hex digits
-// old school e.g. #3a3 = #33aa33
+// restricted palette, r g and b must be multiples of 16
 
 var palette = {
 };
@@ -13,11 +11,11 @@ function toHex(number) {
   return hexString;
 };
 
-for (var r=0; r<256; r+=51) {
+for (var r=0; r<256; r+=16) {
   const red = toHex(r);
-  for (var g=0; g<256; g+=51) {
+  for (var g=0; g<256; g+=16) {
     const green = toHex(g);
-    for (var b=0; b<256; b+=51) {
+    for (var b=0; b<256; b+=16) {
       const blue = toHex(b);
       const hexcode = `#${red}${green}${blue}`;
       palette[hexcode] = hexcode;
