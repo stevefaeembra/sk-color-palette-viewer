@@ -4,8 +4,13 @@ const SelectedColourView = function(attachment) {
   this.element = document.querySelector(attachment);
 }
 
+SelectedColourView.prototype.hide = function () {
+  // hide the selected colour info panel
+  this.element.innerHTML = "";
+};
+
 SelectedColourView.prototype.render = function (colorEntry) {
-  console.dir(colorEntry);
+  // render info about the selected colour
   this.element.innerHTML = "";
   const divSelectedInfo = document.createElement("div");
   divSelectedInfo.className = "selectedInfo";
@@ -40,6 +45,20 @@ SelectedColourView.prototype.render = function (colorEntry) {
 
     divSelectedInfo.appendChild(divField);
   })
+
+  // add a close button at the end of the grid
+
+  const closeButton = document.createElement("div");
+  closeButton.className = "selectedInfo--field";
+  closeButton.innerHTML = "Close";
+
+  // add event listener to close button
+  closeButton.addEventListener("click", (event) => {
+    PubSub.publish("SwatchView:close", {});
+  })
+
+  divSelectedInfo.appendChild(closeButton);
+
   this.element.appendChild(divSelectedInfo);
 };
 
@@ -47,6 +66,10 @@ SelectedColourView.prototype.bindEvents = function () {
   PubSub.subscribe("SwatchView:clicked", (event) => {
     PubSub.signForDelivery(this,event);
     this.render(event.detail.data);
+  });
+  PubSub.subscribe("SwatchView:close", (event) => {
+    PubSub.signForDelivery(this,event);
+    this.hide();
   });
   PubSub.subscribe("palettemodel:gotpalette", (event) => {
     PubSub.signForDelivery(this,event);
