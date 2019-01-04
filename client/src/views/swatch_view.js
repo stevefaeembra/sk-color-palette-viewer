@@ -8,6 +8,7 @@ SwatchView.prototype.render = function () {
   const divColorBit = document.createElement("div");
   const divNameBit = document.createElement("div");
   divSwatch.className = "swatch-card";
+  divSwatch.id = this.color.hexcode;
   // color swatch
   divColorBit.style.backgroundColor = this.color.hexcode;
   divColorBit.className = "swatch-card--swatch";
