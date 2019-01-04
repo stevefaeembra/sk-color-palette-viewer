@@ -43,7 +43,7 @@ form {
 
 nav {
   z-index: 1000;
-  background-color: wheat;
+  background-image: linear-gradient(to bottom, #cfd9df, #e2ebf0);
   position: fixed;
   top: 0;
   width: 100%;

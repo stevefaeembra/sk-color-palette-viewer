@@ -11,7 +11,7 @@ const PaletteModel = function() {
 PaletteModel.prototype.bindEvents = function () {
   PubSub.subscribe("sortView:changeSortBy", (event) => {
     PubSub.signForDelivery(this,event);
-    console.log(`Now going to sort by ${event.detail.sortBy}`);
+    //console.log(`Now going to sort by ${event.detail.sortBy}`);
     this.sortedBy = event.detail.sortBy;
     this.fetchPaletteSorted();
   })
@@ -19,7 +19,7 @@ PaletteModel.prototype.bindEvents = function () {
     PubSub.signForDelivery(this, event);
     const newPaletteName = event.detail.paletteName;
     this.paletteName = newPaletteName;
-    console.log(`going to fetch the palette called ${this.paletteName}`);
+    //console.log(`going to fetch the palette called ${this.paletteName}`);
     this.fetchPaletteSorted();
   })
 };
@@ -29,7 +29,7 @@ PaletteModel.prototype.fetchPaletteSorted = function () {
   const host = window.location.href;
   const request = new RequestHelper(`${host}colors?sortedBy=${this.sortedBy}&palette=${this.paletteName}`);
   request.get().then((data) => {
-    console.dir(data);
+    //console.dir(data);
     this.data = data;
     PubSub.publish("palettemodel:gotpalette", {palette: data});
   });

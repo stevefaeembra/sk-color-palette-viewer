@@ -50,7 +50,7 @@ PaletteModel.prototype.sortedBy = function (fieldName) {
 
 PaletteModel.prototype.getAll = function (sortedBy = "name", paletteName="websafe") {
   this.loadPalette(paletteName);
-  console.log(this.data);
+  //console.log(this.data);
   return this.sortedBy(sortedBy);
 };
 

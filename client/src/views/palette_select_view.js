@@ -10,7 +10,7 @@ PaletteSelectView.prototype.render = function () {
   const formDiv = document.createElement("form");
   const select = document.createElement("select");
   select.id = "palette";
-  const options = ["Palette:","css","websafe", "rgb16"];
+  const options = ["Palette:","css","websafe", "rgb15"];
   options.forEach((optionName) => {
     const option = document.createElement("option");
     option.name = optionName;
@@ -23,7 +23,7 @@ PaletteSelectView.prototype.render = function () {
   select.addEventListener("change", (event) => {
     const selectedOption = "";
     //debugger;
-    console.log(event.target);
+    //console.log(event.target);
     const indexOfPaletteField = event.target.selectedIndex;
     const selectedPaletteOption = event.target[indexOfPaletteField];
     PubSub.publish("paletteSelectView:changePalette", {paletteName: selectedPaletteOption["name"]});

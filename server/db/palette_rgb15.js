@@ -11,11 +11,11 @@ function toHex(number) {
   return hexString;
 };
 
-for (var r=0; r<256; r+=16) {
+for (var r=0; r<256; r+=15) {
   const red = toHex(r);
-  for (var g=0; g<256; g+=16) {
+  for (var g=0; g<256; g+=15) {
     const green = toHex(g);
-    for (var b=0; b<256; b+=16) {
+    for (var b=0; b<256; b+=15) {
       const blue = toHex(b);
       const hexcode = `#${red}${green}${blue}`;
       palette[hexcode] = hexcode;

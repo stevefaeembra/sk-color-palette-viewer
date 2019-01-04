@@ -23,7 +23,7 @@ SortView.prototype.render = function () {
   select.addEventListener("change", (event) => {
     const selectedOption = "";
     //debugger;
-    console.log(event.target);
+    //console.log(event.target);
     const indexOfSortField = event.target.selectedIndex;
     const selectedSortOption = event.target[indexOfSortField];
     PubSub.publish("sortView:changeSortBy", {sortBy: selectedSortOption["name"]});

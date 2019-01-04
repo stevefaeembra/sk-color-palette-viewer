@@ -19,11 +19,11 @@ app.get('/colors', (req,res) => {
   const paletteModel = new PaletteModel();
   const sortBy = req.query.sortedBy;
   const paletteName = req.query.palette;
-  console.log(`paletteName: ${paletteName}`);
-  console.log(`sortBy: ${sortBy}`);
+  //console.log(`paletteName: ${paletteName}`);
+  //console.log(`sortBy: ${sortBy}`);
   res.json(paletteModel.getAll(sortBy, paletteName));
 })
 
 app.listen(port, function () {
-  console.log(`Started server on port ${port}`);
+  //console.log(`Started server on port ${port}`);
 });
