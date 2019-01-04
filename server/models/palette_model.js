@@ -29,7 +29,6 @@ PaletteModel.prototype.loadPalette = function (paletteName) {
       luma: colorEntry.luma(),
       neutrality: colorEntry.neutrality()
     });
-    //console.log(entry);
     this.data.push(entry);
   })
 };
@@ -49,7 +48,9 @@ PaletteModel.prototype.sortedBy = function (fieldName) {
   return clone;
 };
 
-PaletteModel.prototype.getAll = function (sortedBy = "name") {
+PaletteModel.prototype.getAll = function (sortedBy = "name", paletteName="websafe") {
+  this.loadPalette(paletteName);
+  console.log(this.data);
   return this.sortedBy(sortedBy);
 };
 
