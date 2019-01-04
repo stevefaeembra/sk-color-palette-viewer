@@ -1,3 +1,5 @@
+const PubSub = require('../helpers/pub_sub.js');
+
 const SwatchView = function(colorEntry) {
   this.color = colorEntry; // palette object for this color
 }
@@ -11,6 +13,10 @@ SwatchView.prototype.render = function () {
   divSwatch.id = this.color.hexcode;
   // color swatch
   divColorBit.style.backgroundColor = this.color.hexcode;
+  // add event listener for click
+  divColorBit.addEventListener("click", (event) => {
+    PubSub.publish("SwatchView:clicked", {data: this.color});
+  })
   divColorBit.className = "swatch-card--swatch";
   // title
   divNameBit.innerHTML = this.color.name;

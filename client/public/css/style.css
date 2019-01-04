@@ -72,7 +72,9 @@ nav {
   margin-bottom: .2rem;
   background-image: linear-gradient(to right,
     rgba(0,0,0,.4) 0%,
-    rgba(0,0,0,0) 70%,
+    rgba(0,0,0,.2) 10%,
+    rgba(0,0,0,0) 80%,
+    rgba(0,0,0,.2) 90%,
     rgba(0,0,0,.3) 100%
   );
   background-blend-mode: normal;
@@ -92,4 +94,9 @@ nav {
   height: 20px;
   text-align: center;
   overflow:hidden;
+}
+
+.selectedInfo--swatch {
+  width: 64px;
+  height: 64px;
 }
