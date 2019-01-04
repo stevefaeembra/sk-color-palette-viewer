@@ -74,15 +74,17 @@ class Colour {
   neutrality() {
     // custom function I devised, work out rms error of deviation from
     // rgb average. Low values are more neutral (RGB values closer
-    // together). NOT PERCEPTUAL, i.e. channels equally weighted.
+    // together). channels now perceptually weighted.
     var r = this.rgb.color[0];
     var g = this.rgb.color[1];
     var b = this.rgb.color[2];
-    var lum = (r+g+b)/3.0; // non-perceptual
+    var lum = ((0.2126*r)+(0.7152*g)+(0.0722*b));
     return (
-      (.2126*(r-lum)*(r-lum)) +
-      (.7152*((g-lum)*(g-lum))) +
-      (.0722*(b-lum)*(b-lum))
+      //(
+        (.2126*(r-lum)*(r-lum)) +
+        (.7152*((g-lum)*(g-lum))) +
+        (.0722*(b-lum)*(b-lum))
+      //)
     );
   }
 
