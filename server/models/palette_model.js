@@ -1,4 +1,4 @@
-const paletteJson = require("../db/palette.js")
+const paletteJson = require("../db/palette_websafe.js")
 const Colour = require("./colour.js")
 
 const PaletteModel = function () {
