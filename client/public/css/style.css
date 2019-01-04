@@ -38,6 +38,11 @@ form {
   margin-bottom: 1rem;
 }
 
+#paletteForm,
+#sortForm {
+  display: inline-block;
+}
+
 .swatch-card {
   display: flex;
   flex-direction: column;
