@@ -25,5 +25,5 @@ app.get('/colors', (req,res) => {
 })
 
 app.listen(port, function () {
-  //console.log(`Started server on port ${port}`);
+  console.log(`Started server on port ${port}`);
 });
